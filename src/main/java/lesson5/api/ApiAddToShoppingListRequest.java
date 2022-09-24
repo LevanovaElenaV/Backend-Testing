@@ -1,4 +1,4 @@
-package api;
+package lesson5.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

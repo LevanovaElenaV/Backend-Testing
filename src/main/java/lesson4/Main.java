@@ -1,22 +1,26 @@
 package lesson4;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.specification.RequestSpecification;
+import api.ApiSearchResult;
+import api.ApiUserConnectRequest;
+import api.ApiUserConnectResult;
+import api.SpoonaccularService;
 
 public class Main {
     public static void main(String[] args) {
 
-        User user = User.builder()
-                .setName("Ivan")
-                .setSurname("Ivanov")
-                .setAddress("Address")
-                .setEmail("123@ya.ru")
+//        private static ApiUserConnectResult apiUserConnectResult;
+//        private static Integer idForRemove;
+
+        SpoonaccularService spoonaccularService = new SpoonaccularService();
+        ApiSearchResult recipes = spoonaccularService.findRecipes("Bread", 3);
+
+        ApiUserConnectRequest apiUserConnectRequest = ApiUserConnectRequest.builder()
+//                .userName("LenaL")
+//                .firstName("Lena")
+//                .lastName("L")
+//                .email("enalevster@gmail.com")
                 .build();
+        ApiUserConnectResult apiUserConnectResult = spoonaccularService.connect(apiUserConnectRequest); // здесь валится
+//        System.out.println(apiUserConnectResult);
 
-        // DSL - domain specific language
-
-        RequestSpecification requestSpecification =  // Вход. Для решения вопросов query, path, URL, apikey, log, body. А также GET,POST,PUT,DELETE
-                new RequestSpecBuilder()
-                        .build();
-    }
-
+        }
 }

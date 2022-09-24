@@ -1,11 +1,8 @@
 package lesson4;
 
 
-import api.ApiAddToShoppingListRequest;
+import lesson5.api.ApiAddToShoppingListRequest;
 import api.ApiUserConnectResult;
-import io.restassured.mapper.ObjectMapper;
-import io.restassured.mapper.ObjectMapperDeserializationContext;
-import io.restassured.mapper.ObjectMapperSerializationContext;
 import io.restassured.path.json.JsonPath;
 import net.javacrumbs.jsonunit.JsonAssert;
 import org.junit.jupiter.api.MethodOrderer;
