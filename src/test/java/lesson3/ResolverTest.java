@@ -11,10 +11,8 @@ import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static java.time.Duration.ofSeconds;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.assertTimeout;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ResolverTest {
@@ -31,8 +29,6 @@ public class ResolverTest {
     void baseTest() {
         int min = resolver.getMin(new int[]{4,2,1,5,2,6});
         assertThat(min).isEqualTo(1);
-//      Assertions.assertEquals(min,1);
-
     }
 
     @Test
@@ -44,8 +40,6 @@ public class ResolverTest {
         assertThatThrownBy(() -> resolver.getMin(null))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("Array could not be empty");
-
-
     }
 
     @Test
